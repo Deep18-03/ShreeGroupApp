@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="~/Assets/Images/Fav-icon.png" type="image/png" />
+    <title>Shree Group Umreth</title>
+
+
+    <!-- Bootstrap -->
+    <link href="~/Assets/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="~/Assets/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    @Styles.Render("~/Content/css")
+</head>
+
+<body class="nav-md">
+
+    <!-- page content -->
+    @RenderBody()
+    <!-- page content -->
+    <!-- jQuery -->
+    <script src="~/Assets/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="~/Assets/vendors/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    @RenderSection("scripts", required: false)
+    <script>
+        //Navigation on resize
+        $(window).resize(function () {
+            if (screen.width < 768) {
+                $('nav').removeClass('navbar');
+            }
+            else {
+                $('nav').addClass('navbar');
+            }
+        });
+        //navigation on load
+        $(document).ready(function () {
+            if (screen.width < 768) {
+                $('nav').removeClass('navbar');
+            }
+            else {
+                $('nav').addClass('navbar');
+            }
+        });
+
+
+    </script>
+
+    @*<script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        })
+    </script>*@
+</body>
+</html>

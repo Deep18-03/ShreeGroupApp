@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Shree Group";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Custom/success.css" rel="stylesheet" />
+</head>
+<div class="card">
+    <div class="warning-msg">
+        <i class="fa fa-warning"></i>
+        Payment Fail
+    </div>
+    <br />
+    <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+        <i class="checkmark"><i class="fa fa-times" aria-hidden="true"></i></i>
+    </div>
+    <h1>Fail</h1>
+    <br />
+    <input type="button" value="Back To Home" class="Register-success" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+</div>

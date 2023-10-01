@@ -1,0 +1,176 @@
+﻿@model ShreeGroup.Models.GeneralSeatBookingModel
+
+@{
+    ViewBag.Title = "SaveGeneralPass";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSave").click(function () {
+            ValidateForm();
+        })
+    })
+
+    function ValidateForm() {
+        if (!$("#FirstName").valid()) {
+            return false;
+        }
+        //if (!$("#LastName").valid()) {
+        //    return false;
+        //}
+
+        //$('#ImageFile').bind("click", function () {
+        //    var imgVal = $('#uploadfile').val();
+        //    if (imgVal == '') {
+        //        alert("empty input file");
+        //        return false;
+        //    }
+
+
+        //});
+    }
+</script>
+<head>
+    <link href="~/Content/Custom/registeration.css" rel="stylesheet" />
+    <style>
+        @@keyframes blinking {
+        0% {
+          background-color: #06c3d1;
+          border: 3px solid #666;
+        }
+        100% {
+          background-color: #270da6;
+          border: 3px solid #666;
+        }
+      }
+
+        span {
+            font-size: 12px !important;
+            color: red !important;
+        }
+    </style>
+</head>
+
+<section id="home">
+    <div class="home-bg-img"></div>
+
+    <div id="home-content">
+        <div>
+            <div id="home-heading" class="text-center">
+                <div style="display: flex; justify-content: center;">
+                    <img class="Side-logo" style="width:130px;" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                    <img class="Shree-Top-Logo" style="width:200px;" src="~/Assets/Images/footer-logo.png" alt="Logo" />
+                    <img class="Side-logo" style="width: 130px" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                </div>
+                <div>
+                    <h1 style="color:white">General Seat Pass Registration</h1>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<br />
+
+
+<section id="user_form">
+    <div class="container">
+        @using (Html.BeginForm("SaveGeneralPass", "GeneralSeatPass", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-row label-text">
+
+                <!--First Name-->
+                <div class="form-group col-md-6" id="text">
+                    @Html.LabelFor(model => model.FirstName, new { @class = "required" })
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your name" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+
+                <!--Last Name-->
+                @*<div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.LastName, new { @class = "required" })
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your last name" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>*@
+            </div>
+
+
+            <div class="form-row label-text">
+                <!--Phone numeber-->
+                <div class="form-group col-md-6" id="text">
+                    @Html.LabelFor(model => model.MobileNumber, new { @class = "required" })
+                    @Html.EditorFor(model => model.MobileNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your phone number", type = "number", maxlength = "10" } })
+                    @Html.ValidationMessageFor(model => model.MobileNumber, "", new { @class = "text-danger" })
+                </div>
+                <!--Quantity-->
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.Quantity, new { @class = "required" })
+                    @Html.DropDownListFor(
+                 model => model.Quantity,
+                 new SelectList(Enumerable.Range(1, 10)),
+                 new { @class = "form-control", @onchange = "SetTotalAmount(this.value);" }
+             )
+                    @Html.ValidationMessageFor(model => model.Quantity, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+          
+            <div class="form-row label-text">
+                <!--Amount Details-->
+                <div class="form-group col-md-12" id="text">
+                    <div class="alert">
+                        <ul style="color:white;font-size:14px; margin-left:10px;">
+                            @*<li>Physical pass should be collected from below address after 20th September 2022</li>*@
+                            <li>Address : SNDT Ground, Umreth</li>
+                            <li>Pass helpline number : +91 9723555960, +91 9638886727&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div class="alert">
+                        <strong style="font-size:20px; color:white !important">Total Amount for Garba Season Pass <i class="fa fa-inr"></i> 500 x <strong id="quantity"></strong> = <i class="fa fa-inr"></i> <strong id="totalAmount" style=" width: 200px; height: 200px; animation: blinking 1s infinite;"></strong></strong>
+                    </div>
+                </div>
+            </div>
+            <!--Amount hidden-->
+            @Html.HiddenFor(model => model.TotalAmount, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            <br />
+            <div class="form-row">
+                <!--submit button-->
+                <div class="form-group col-md-6" id="text">
+                    <input type="submit" value="Submit" class="primary-button-reg" id="btnSave" />
+                    <input type="button" value="Cancel" class="secondary-button-reg" style="margin-left:20px;" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+                </div>
+            </div>
+
+            <br />
+            <br />
+        }
+    </div>
+</section>
+
+
+<script>
+    $("#quantity").text(1);
+    $("#totalAmount").text(500);
+
+    function SetTotalAmount(qunatity) {
+        var totalAmount = calculateTotalAmount(qunatity);
+
+        $("#quantity").text(qunatity);
+        $("#totalAmount").text(totalAmount);
+        // Update the TotalAmount input field
+        document.querySelector('#TotalAmount').value = totalAmount;
+    }
+
+    function calculateTotalAmount(quantity) {
+        var generalPassAmount = '@ViewBag.GeneralPassAmount';
+        // You can replace this with your own calculation logic
+        return quantity * generalPassAmount; // For example, assuming 10 as the price per unit
+    }
+</script>

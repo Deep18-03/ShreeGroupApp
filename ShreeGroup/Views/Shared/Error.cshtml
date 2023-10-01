@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+    <link href="~/Content/Custom/error.css" rel="stylesheet" />
+</head>
+<body>
+    <img src="~/Assets/Images/404 1.svg" style="" id="error-image" />
+    <br />
+    <div class="text">
+        <div class="center">
+            <h1>Opps! Page Not Found.</h1>
+            <h2>An error occurred while processing your request.</h2>
+        </div>
+        <div class="center">
+            <br />
+            <input type="button" class="back-to-home" value="Back To Home" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+        </div>
+    </div>
+</body>
+</html>

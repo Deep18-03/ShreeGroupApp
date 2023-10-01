@@ -1,0 +1,134 @@
+﻿@model IEnumerable<ShreeGroup.Models.RegistrationModel>
+
+@{
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+    ViewBag.Title = "Shree Group";
+}
+
+<head>
+    <link href="~/Content/Custom/policy.css" rel="stylesheet" />
+</head>
+
+<section id="home">
+    <div class="home-bg-img"></div>
+
+    <!-- home content -->
+    <div id="home-content">
+        <div>
+            <div id="home-heading" class="text-center">
+                @*<div class="logo-all">
+            <img class="logo center-logo-1" src="~/Assets/Images/new logo.png" alt="Logo" />
+            <img class="logo-2 center-logo-2" src="~/Assets/Images/utsav.png" alt="Logo" />
+        </div>
+        <img class="garba-girl" src="~/Assets/Images/garba-girl.png" alt="Logo" />
+        <img class="garba-boy" src="~/Assets/Images/garba-boy.png" alt="Logo" />*@
+
+                <div style="display: flex; justify-content: center;">
+                    <img class="Side-logo" style="width:130px;" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                    <img class="Shree-Top-Logo" style="width:200px;" src="~/Assets/Images/footer-logo.png" alt="Logo" />
+                    <img class="Side-logo" style="width: 130px" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="container">
+        <h1>Refund & Cancellation </h1>
+        <br />
+        <br />
+        <p>All ticket passes transactions will be final and non-refundable in any case from our side. In case of any query or request, please feel free to contact us.</p>
+        <br />
+        <br />
+
+        <div>
+            <input type="button" value="Back To Home" class="secondary-button-reg" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+        </div>
+    </div>
+    <footer class="bg-primary text-center text-lg-start text-white footer-color" id="Footer" style="margin-top:50px;">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!--Grid row-->
+            <div class="row my-4">
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <img class="text-uppercase footer-logo" src="~/Assets/Images/footer-logo.png" alt="Logo" loading="lazy" />
+                </div>
+                <!--Grid column-->
+                <!--Grid Contact Info column-->
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 font-weight-bolder" style="color: #E28D28">Contact Info</h5>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p style="color:white !important"><i class="fa fa-map-marker" style="color: #E28D28"></i>SNDT Ground , Umreth , Dist. Anand , Gujarat 388220</p>
+                        </li>
+                        <li>
+                            <p style="color:white !important"><i class="fa fa-phone pe-2" style="color: #E28D28"></i> +91 8490809770</p>
+                        </li>
+                        <li>
+                            <p style="color:white !important"><i class="fa fa-envelope pe-2 mb-0" style="color: #E28D28"></i> help.shreegroupumreth@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 font-weight-bolder" style="color: #E28D28">Quick Links</h5>
+
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="@Url.Action("PrivacyPolicy", "Home")" class="text-white">Privacy Policy</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="@Url.Action("TermsAndConditions", "Home")" class="text-white">Terms & Conditions</a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="@Url.Action("RefundAndReturn", "Home")" class="text-white">Refund & Return</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--Grid column-->
+                <!--Grid column-->
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5 class="text-uppercase mb-4 font-weight-bolder" style="color: #E28D28">Follow Us</h5>
+
+                    <ul class="list-unstyled d-flex flex-row justify-content-center">
+                        <li>
+                            <a style="border:2px solid white" class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/people/Shree-Parivaar/100019660440526/" target="_blank" role="button">
+                                <i class="fa fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="border:2px solid white" class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a style="border:2px solid white" class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/shree_group22/" target="_blank" role="button">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <div>Developed by : <br />Prince IT Solutions <br />(+91 9033769091)</div>
+                </div>
+                <!--Grid column-->
+            </div>
+            <!--Grid row-->
+        </div>
+        <!-- Grid container -->
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+            © 2023 Copyright:
+            <a class="text-white" href="http://shreegroupumreth.com/">ShreeGroup.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</section>
+
+
+
+

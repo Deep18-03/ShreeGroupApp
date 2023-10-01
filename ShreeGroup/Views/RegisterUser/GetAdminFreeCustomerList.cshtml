@@ -1,0 +1,270 @@
+﻿@model IEnumerable<ShreeGroup.Models.RegisterCustomer>
+@{
+    ViewBag.Title = "GetCustomerList";
+}
+
+<style>
+    table {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        table-layout: fixed;
+    }
+    .tab {
+        padding: 0px !important;
+        width: 160px;
+        height: 48px;
+        /* theme */
+        border: none !important;
+        background: none;
+        font-size: 16px !important;
+        color: #E28D28 !important;
+    }
+    a {
+        padding: 5px 30px;
+        width: 160px;
+        height: 48px;
+        /* theme */
+        border: 1px solid #E28D28;
+        border-radius: 4px;
+        background: none;
+        font-size: 22px !important;
+        color: #E28D28 !important;
+    }
+
+    .search-button {
+        width: 160px;
+        height: 35px;
+        /* theme */
+        border: 1px solid #E28D28;
+        border-radius: 4px;
+        background: #E28D28;
+        font-size: 22px !important;
+        color: #ffffff !important;
+    }
+
+    table caption {
+        font-size: 1.5em;
+        margin: .5em 0 .75em;
+    }
+
+    table tr {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        padding: .35em;
+    }
+
+    table th,
+    table td {
+        padding: .625em;
+        text-align: center;
+    }
+
+    table th {
+        font-size: .85em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+
+    @@media screen and (max-width: 400px) {
+        #home-heading-1 {
+            font-size: 25px !important;
+            top: -15px !important;
+        }
+    }
+
+    @@media only screen and (max-width: 410px) {
+        #home-heading-1 {
+            font-size: 25px !important;
+            top: -18px !important;
+        }
+    }
+
+    @@media screen and (max-width: 600px) {
+        table {
+            border: 0;
+        }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+                table td::before {
+                    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+                    content: attr(data-label);
+                    float: left;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                table td:last-child {
+                    border-bottom: 0;
+                }
+    }
+
+    @@media screen and (max-width: 900px) {
+        table {
+            border: 0;
+        }
+
+            table caption {
+                font-size: 1.3em;
+            }
+
+            table thead {
+                border: none;
+                clip: rect(0 0 0 0);
+                height: 1px;
+                margin: -1px;
+                overflow: hidden;
+                padding: 0;
+                position: absolute;
+                width: 1px;
+            }
+
+            table tr {
+                border-bottom: 3px solid #ddd;
+                display: block;
+                margin-bottom: .625em;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                font-size: .8em;
+                text-align: right;
+            }
+
+                table td::before {
+                    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+                    content: attr(data-label);
+                    float: left;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                }
+
+                table td:last-child {
+                    border-bottom: 0;
+                }
+    }
+</style>
+
+<h2>GetAdminFreeCustomerList</h2>
+<hr />
+<h3>Total count : @ViewBag.TotalAdminCount</h3>
+
+<div class="container">
+    @using (Html.BeginForm("GetCustomerList", "RegisterUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+
+        <div class="form-row label-text">
+            <div class="form-group col-md-6" id="text">
+                <input id="searching" type="text" name="searching" class="form-control" placeholder="Search for AadharCard Number.....">
+            </div>
+            <div class="form-group col-md-6">
+                <input type="submit" value="Search" class="search-button" />
+            </div>
+        </div>
+    }
+    <input type="button" value="Get paid  List" class="search-button" onclick="@("window.location.href='" + @Url.Action("GetCustomerList", "RegisterUser") + "'");" />
+    <input type="button" value="Back" class="search-button" style="margin-left:20px;" onclick="@("window.location.href='" + @Url.Action("Index", "RegisterUser") + "'");" />
+    <br />
+    <br />
+</div>
+<table>
+    <thead>
+        <tr style="background:#f4f4f4">
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.AadharCard)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th scope="col">
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    <tbody>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td data-label="Id">
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td data-label="FirstName">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td data-label="LastName">
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td data-label="AadharCard">
+                    @{
+                        string aadharcard = Html.DisplayFor(modelItem => item.AadharCard).ToString();
+                    }
+
+                    @Html.ActionLink(aadharcard, "ShowAadharCard", "Customer", new { id = item.AadharCard }, new { @class = "tab" })
+                </td>
+                <td data-label="PhoneNumber">
+                    @Html.DisplayFor(modelItem => item.PhoneNumber)
+                </td>
+                <td data-label="Email">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td data-label="Action">
+                    @Html.ActionLink("View pass", "Details", "Customer", new { id = item.UrlCode }, null)
+                    @*@Html.ActionLink("View pass", "Index", "Home")*@
+                </td>
+            </tr>
+        }
+
+
+
+    </tbody>
+</table>

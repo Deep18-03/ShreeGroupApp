@@ -1,0 +1,283 @@
+﻿@model ShreeGroup.Models.RegisterCashCustomer
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSave").click(function () {
+            ValidateForm();
+        })
+    })
+
+    function ValidateForm() {
+        if (!$("#FirstName").valid()) {
+            return false;
+        }
+        if (!$("#LastName").valid()) {
+            return false;
+        }
+        if (!$("#PhoneNumber").valid()) {
+            return false;
+        }
+
+
+
+
+        //$('#ImageFile').bind("click", function () {
+        //    var imgVal = $('#uploadfile').val();
+        //    if (imgVal == '') {
+        //        alert("empty input file");
+        //        return false;
+        //    }
+
+
+        //});
+    }
+</script>
+<head>
+    <link href="~/Content/Custom/registeration.css" rel="stylesheet" />
+    <style>
+
+        span {
+            font-size: 12px !important;
+            color: red !important;
+        }
+    </style>
+</head>
+
+<!-- header  -->
+@*<header>
+        <nav class="navbar-fixed-top white-nav-top">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg ">
+                    <img class="logo center-logo-1" src="~/Assets/Images/new logo.png" alt="Logo" />
+                    <img class="logo-2 center-logo-2" src="~/Assets/Images/utsav.png" alt="Logo" />
+                </nav>
+            </div>
+        </nav>
+    </header>*@
+<!-- header ends  -->
+<!--Image section-->
+<section id="home">
+    <div class="home-bg-img"></div>
+
+    <!-- home content -->
+    @*<div id="home-content">
+            <div>
+                <div id="home-heading" class="text-center">
+                    <div class="logo-all">
+                        <img class="logo center-logo-1" src="~/Assets/Images/footer-logo.png" alt="Logo" />
+                        <img class="logo-2 center-logo-2" src="~/Assets/Images/utsav.png" alt="Logo" />
+                        <h1 id="home-heading-1">Admin Cash Registration</h1>
+                    </div>
+                    <img class="garba-girl" src="~/Assets/Images/garba-girl.png" alt="Logo" />
+                    <img class="garba-boy" src="~/Assets/Images/garba-boy.png" alt="Logo" />
+
+                </div>
+            </div>
+        </div>*@
+
+    <div id="home-content">
+        <div>
+            <div id="home-heading" class="text-center">
+                <div style="display: flex; justify-content: center;">
+                    <img class="Side-logo" style="width:130px;" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                    <img class="Shree-Top-Logo" style="width:200px;" src="~/Assets/Images/footer-logo.png" alt="Logo" />
+                    <img class="Side-logo" style="width: 130px" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--Image secation-->
+<br />
+<!--Form-->
+<section id="user_form">
+    <div class="container">
+        @using (Html.BeginForm("RegisterCashCustomer", "RegisterUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-row label-text">
+                <div class="form-group col-md-12">
+                    <div class="head2"></div>
+                </div>
+                <br />
+                <!--Aadhar card-->
+                <div class="form-group col-md-6" id="text">
+                    @Html.LabelFor(model => model.AadharCard, new { @class = "required" })
+                    @Html.EditorFor(model => model.AadharCard, new { htmlAttributes = new { @class = "form-control", placeholder = "Example: 830210220283", type = "number", maxlength = "12" } })
+                    @Html.Label("Special character and Spaces are not allowed", new { @class = "text-info" })
+                    <br />
+                    @Html.ValidationMessageFor(model => model.AadharCard, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-row label-text">
+
+                <!--First Name-->
+                <div class="form-group col-md-6" id="text">
+                    @Html.LabelFor(model => model.FirstName, new { @class = "required" })
+                    @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your first name" } })
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+
+                <!--Last Name-->
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(model => model.LastName, new { @class = "required" })
+                    @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your last name" } })
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+
+            <div class="form-row label-text">
+                <!--Phone numeber-->
+                <div class="form-group col-md-6" id="text">
+                    @Html.LabelFor(model => model.PhoneNumber, new { @class = "required" })
+                    @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your phone number", type = "number", maxlength = "10" } })
+                    @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+
+            <div class="form-row label-text">
+                <!--Upload picture-->
+                <div class="form-group col-md-3" id="ProfiletId">
+                    @Html.LabelFor(model => model.ProfilePicture, new { @class = "required" })
+                    <input type="file" name="ImageFile" id="ImageFile" accept="image/jpeg, image/jpg, image/png" required="required" />
+                    @*@Html.TextBoxFor(m => m.ImageFile, new { type = "file" })*@
+                    @Html.ValidationMessageFor(m => m.ImageFile, "", new { @class = "text-danger" })
+                    @Html.Label("Max size 10 mb allowed", new { @class = "text-info", id = "profile-upload-message" })
+                </div>
+                <!--AadharCard picture-->
+                <div class="form-group col-md-3" id="text">
+                    @Html.LabelFor(model => model.AadharCardImage, new { @class = "required" })
+                    <input type="file" name="AadharImageFile" id="AadharImageFile" accept="image/jpeg, image/jpg, image/png" required="required" />
+                    @*@Html.TextBoxFor(m => m.AadharImageFile, new { type = "file" })*@
+                    @Html.ValidationMessageFor(m => m.AadharImageFile, "", new { @class = "text-danger" })
+                    @Html.Label("Max size 10 mb allowed", new { @class = "text-info", id = "aadhar-upload-message" })
+                </div>
+                <!--Blood Group-->
+            </div>
+            <div class="form-row label-text">
+                <div class="form-group col-md-6" id="text">
+                    @Html.LabelFor(model => model.IsVaccinated)
+                    @Html.CheckBox("IsVaccinated", true)
+                </div>
+            </div>
+            <div class="form-row label-text">
+                <!--Amount Details-->
+                <div class="form-group col-md-12" id="text">
+                    <div class="alert">
+                        <ul style="color:white;font-size:14px; margin-left:10px;">
+                            <li>Physical pass should be collected from below address after 20th September 2023</li>
+                            <li>Address : SNDT Ground, Umreth</li>
+                            <li>Pass helpline number : +91 9723555960, +91 9638886727&nbsp;</li>
+                        </ul>
+                    </div>
+                    <div class="alert">
+                        <strong style="font-size:20px; color:white !important">Admin Cash registartion page.</strong>
+                    </div>
+                </div>
+            </div>
+            <!--Amount hidden-->
+            @*@Html.HiddenFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your last name", @readonly = "readonly" } })*@
+            <br />
+            <div class="form-row">
+                <!--submit button-->
+                <div class="form-group col-md-6" id="text">
+                    <input type="submit" value="Submit" class="primary-button-reg" id="btnSave" />
+                    <input type="button" value="Cancel" class="secondary-button-reg" style="margin-left:20px;" onclick="@("window.location.href='" + @Url.Action("Index", "RegisterUser") + "'");" />
+                </div>
+            </div>
+
+            <br />
+            <br />
+        }
+    </div>
+</section>
+
+
+<script>
+
+    //Max size validation for Profile picture
+    var uploadImageField = document.getElementById("ImageFile");
+
+    uploadImageField.onchange = function () {
+        if (this.files[0].size > 10600000) {
+            this.value = "";
+            const profileelement = document.getElementById("profile-upload-message");
+            //const para = document.createElement("label");
+            $('profile-upload-message').removeClass('text-info');
+            profileelement.setAttribute(
+                'style',
+                'color: red !important;',
+            );
+            profileelement.style.fontSize = "larger";
+            //const node = document.createTextNode("Max size 5 mb allow.");
+            //para.appendChild(node);
+            //const element = document.getElementById("ProfiletId");
+            //element.appendChild(para);
+        }
+        else {
+            const profileelement = document.getElementById("profile-upload-message");
+            //const para = document.createElement("label");
+            $('profile-upload-message').addClass('text-info');
+            profileelement.setAttribute(
+                'style',
+                'color: #17a2b8 !important; ',
+            );
+        }
+    };
+
+    //Max size aadahar card valdiation
+    var uploadAadbahrCardField = document.getElementById("AadharImageFile");
+
+    uploadAadbahrCardField.onchange = function () {
+        if (this.files[0].size > 10600000) {
+            this.value = "";
+            const aadharelement = document.getElementById("aadhar-upload-message");
+            //const para = document.createElement("label");
+            $('aadhar-upload-message').removeClass('text-info');
+            aadharelement.setAttribute(
+                'style',
+                'color: red !important; ',
+            );
+            aadharelement.style.fontSize = "larger";
+            //const node = document.createTextNode("Max size 5 mb allow.");
+            //para.appendChild(node);
+            //const element = document.getElementById("ProfiletId");
+            //element.appendChild(para);
+        }
+        else {
+            const aadharelement = document.getElementById("aadhar-upload-message");
+            //const para = document.createElement("label");
+            $('aadhar-upload-message').addClass('text-info');
+            aadharelement.setAttribute(
+                'style',
+                'color: #17a2b8 !important; ',
+            );
+        }
+    };
+</script>
+
+@*<link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    @section scripts{
+        <script src="~/Scripts/jquery-ui-1.13.2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $(".datepicker").datepicker({
+                    dateFormat: "dd-mm-yy",
+                    changemonth: true,
+                    changeyear: true
+                });
+            });
+        </script>
+    }*@

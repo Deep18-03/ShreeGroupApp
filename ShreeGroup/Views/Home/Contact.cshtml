@@ -1,0 +1,23 @@
+﻿<div class="text-center">
+    QR Code
+</div>
+
+
+@using (Html.BeginForm("Contact", "Home", FormMethod.Post))
+{
+    <input type="text" name="qrcode" />
+    <input type="text" name="qrcode" />
+    <input type="submit" value="Generate" />
+}
+
+<hr />
+@if (ViewBag.QRCodeImage != null)
+{
+    <img src="@ViewBag.QRCodeImage" alt="" style="height:150px;width:150px" />
+}
+
+@*<div class="row">
+    <div class="col-12">
+        <img src="@Url.Action("GenerateQACode")" alt="QRCode" />
+    </div>
+</div>*@

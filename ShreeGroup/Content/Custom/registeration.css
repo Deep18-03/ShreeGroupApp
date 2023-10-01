@@ -1,0 +1,603 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+section {
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* =========================================
+                Home
+============================================ */
+#home {
+    background: none;
+    height: 400px;
+}
+
+.primary-button-reg {
+    padding: 11px 30px;
+    gap: 10px;
+    width: 160px;
+    height: 48px;
+    border-radius: 4px;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: #E28D28;
+    color: white !important;
+    font-size: 22px !important;
+    float: left;
+}
+
+.secondary-button-reg {
+    padding: 5px 30px;
+    width: 160px;
+    height: 48px;
+    /* theme */
+    border: 1px solid #E28D28;
+    border-radius: 4px;
+    background: none;
+    font-size: 22px !important;
+    color: #E28D28 !important;
+}
+
+.home-bg-img {
+    position: fixed;
+    width: 100%;
+    height: 380px;
+    z-index: -1;
+    /*background: url('../../Assets/Images/venue2.png') no-repeat;*/
+    background: #4F275E;
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+#home-content {
+    margin-top: 100px;
+}
+
+#home-heading-1 {
+    color: white !important;
+    font-size: 50px !important;
+    position: absolute;
+    left: 500px;
+    top: 232px;
+}
+
+.garba-girl {
+    width: 130px;
+    position: absolute;
+    top: 42px;
+    left: 200px;
+}
+
+.garba-boy {
+    width: 290px;
+    position: absolute;
+    top: 42px;
+    right: 200px;
+}
+
+/* =========================================
+                Text field
+============================================ */
+textarea:focus, input:focus {
+    outline: none !important;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+}
+
+#uploader_img, #uploader_img-1, #uploader_img-2 {
+    border: 1px solid #d1d1d1;
+    color: #cccccc;
+    padding-top: 15px;
+}
+
+
+
+.logo-register {
+    float: left;
+}
+
+/* White Navigation */
+
+.white-nav-top {
+    background: none;
+    padding: 8px 0;
+    -webkit-box-shadow: 0 8px 6px -9px #999;
+    box-shadow: 0 8px 6px -9px #999;
+    z-index: 2;
+    height: 80px;
+}
+
+.logo-all {
+    position: relative;
+    top: -50px;
+    left: 50px;
+}
+
+.center-logo-1 {
+    position: relative;
+    top: -50px;
+    margin-right: 10px;
+}
+
+.center-logo-2 {
+    position: relative;
+    top: -65px;
+}
+
+.logo {
+    width: 325px;
+    height: 325px;
+    position: relative;
+}
+
+.logo-2 {
+    margin-left: 50px;
+    width: 400px;
+    height: 220px;
+    position: relative;
+    margin-right: 120px;
+}
+
+
+@media(max-width: 767px) {
+
+    .primary-button-reg {
+        padding: 11px 30px;
+        gap: 10px;
+        width: 160px;
+        height: 48px;
+        border-radius: 4px;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        background: #E28D28;
+        color: white !important;
+        font-size: 22px !important;
+        float: left;
+    }
+
+    .secondary-button-reg {
+        padding: 5px 30px;
+        width: 160px;
+        height: 48px;
+        /* theme */
+        border: 1px solid #E28D28;
+        border-radius: 4px;
+        background: none;
+        font-size: 22px !important;
+        color: #E28D28 !important;
+    }
+
+    .center-logo-1 {
+        position: relative;
+        top: 15px;
+        right: -120px;
+        margin-right: 10px;
+    }
+
+    .center-logo-2 {
+        position: relative;
+        top: -15px;
+        right: -10px
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        padding-bottom: 20px;
+        position: relative;
+        top: -7px;
+        left: -14px;
+        margin-left: 50px;
+    }
+
+    .logo-2 {
+        top: 65px;
+        margin-left: -165px;
+        height: 90px;
+        width: 180px;
+    }
+
+    .logo-all {
+        position: relative;
+        top: -70px;
+        left: 60px;
+    }
+
+    .garba-girl {
+        width: 70px;
+        position: relative;
+        top: -250px;
+        left: -100px;
+    }
+
+    .garba-boy {
+        width: 170px;
+        position: relative;
+        top: -250px;
+        left: 100px;
+    }
+
+    #home-heading-1 {
+        color: white !important;
+        font-size: 40px !important;
+        position: relative;
+        left: -60px;
+        top: 60px;
+    }
+}
+
+
+
+@media only screen and (max-width: 500px) {
+
+
+    .primary-button-reg {
+        padding: 11px 30px;
+        gap: 10px;
+        width: 160px;
+        height: 48px;
+        border-radius: 4px;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        background: #E28D28;
+        color: white !important;
+        font-size: 22px !important;
+        float: left;
+    }
+
+    .secondary-button-reg {
+        padding: 5px 30px;
+        width: 160px;
+        height: 48px;
+        /* theme */
+        border: 1px solid #E28D28;
+        border-radius: 4px;
+        background: none;
+        font-size: 22px !important;
+        color: #E28D28 !important;
+    }
+
+    .center-logo-1 {
+        position: relative;
+        top: 15px;
+        right: -120px;
+        margin-right: 10px;
+    }
+
+    .center-logo-2 {
+        position: relative;
+        top: -30px;
+        right: -8px;
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        padding-bottom: 20px;
+        position: relative;
+        left: -80px;
+        top: -18px;
+        margin-left: 50px;
+    }
+
+
+
+    .logo-2 {
+        margin-left: -20px;
+        width: 200px;
+        height: 125px;
+    }
+
+    .logo-all {
+        position: relative;
+        top: -70px;
+        left: 60px;
+    }
+
+    .garba-girl {
+        width: 60px;
+        position: relative;
+        top: -300px;
+        left: -40px;
+    }
+
+    #home-heading-1 {
+        color: white !important;
+        font-size: 30px !important;
+        position: absolute;
+        left: 50px;
+        top: 232px;
+    }
+
+    .garba-boy {
+        width: 150px;
+        position: relative;
+        top: -300px;
+        left: 40px;
+    }
+}
+
+@media only screen and (max-width: 410px) {
+
+    .center-logo-1 {
+        position: relative;
+        top: 15px;
+        right: -120px;
+        margin-right: 10px;
+    }
+
+    .center-logo-2 {
+        position: relative;
+        top: -32px;
+        right: -10px
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        padding-bottom: 20px;
+        position: relative;
+        left: -80px;
+        top: -18px;
+        margin-left: 50px;
+    }
+
+
+    .logo-2 {
+        margin-left: -20px;
+        width: 200px;
+        height: 125px;
+    }
+
+
+    .logo-all {
+        position: relative;
+        top: -70px;
+        left: 60px;
+    }
+
+    .garba-boy {
+        width: 150px;
+        position: relative;
+        top: -300px;
+        left: 40px;
+    }
+
+    .garba-girl {
+        width: 60px;
+        position: relative;
+        top: -300px;
+        left: -40px;
+    }
+
+    #home-heading-1 {
+        color: white !important;
+        font-size: 30px !important;
+        position: absolute;
+        left: 30px;
+        top: 232px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+
+    .primary-button-reg {
+        padding: 11px 30px;
+        gap: 10px;
+        width: 160px;
+        height: 48px;
+        border-radius: 4px;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        background: #E28D28;
+        color: white !important;
+        font-size: 22px !important;
+        float: left;
+    }
+
+    .secondary-button-reg {
+        padding: 5px 30px;
+        width: 160px;
+        height: 48px;
+        /* theme */
+        border: 1px solid #E28D28;
+        border-radius: 4px;
+        background: none;
+        font-size: 22px !important;
+        color: #E28D28 !important;
+    }
+
+    .center-logo-1 {
+        position: relative;
+        top: 15px;
+        right: -120px;
+        margin-right: 10px;
+    }
+
+    .center-logo-2 {
+        position: relative;
+        top: -32px;
+        right: -10px
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        padding-bottom: 20px;
+        position: relative;
+        left: -80px;
+        top: -18px;
+        margin-left: 50px;
+    }
+
+    .logo-2 {
+        margin-left: -20px;
+        width: 200px;
+        height: 125px;
+    }
+
+    .logo-all {
+        position: relative;
+        top: -70px;
+        left: 60px;
+    }
+
+    .garba-boy {
+        width: 150px;
+        position: relative;
+        top: -300px;
+        left: 40px;
+    }
+
+    .garba-girl {
+        width: 60px;
+        position: relative;
+        top: -300px;
+        left: -40px;
+    }
+
+    #home-heading-1 {
+        color: white !important;
+        font-size: 30px !important;
+        position: absolute;
+        left: 0px;
+        top: 232px;
+    }
+}
+
+
+@media only screen and (max-width: 370px) {
+
+    .primary-button-reg {
+        padding: 11px 30px;
+        gap: 10px;
+        width: 130px;
+        height: 48px;
+        border-radius: 4px;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        background: #E28D28;
+        color: white !important;
+        font-size: 22px !important;
+        float: left;
+    }
+
+    .secondary-button-reg {
+        padding: 5px 30px;
+        width: 130px;
+        height: 48px;
+        /* theme */
+        border: 1px solid #E28D28;
+        border-radius: 4px;
+        background: none;
+        font-size: 22px !important;
+        color: #E28D28 !important;
+    }
+
+    .center-logo-1 {
+        position: relative;
+        top: 15px;
+        right: -120px;
+        margin-right: 10px;
+    }
+
+    .center-logo-2 {
+        position: relative;
+        top: -15px;
+        right: -10px
+    }
+
+    .logo {
+        width: 150px;
+        height: 150px;
+        padding-bottom: 20px;
+        position: relative;
+        left: -80px;
+        top: -18px;
+        margin-left: 50px;
+    }
+
+
+    .logo-2 {
+        margin-left: -20px;
+        width: 200px;
+        height: 125px;
+    }
+
+    .logo-all {
+        position: relative;
+        top: -70px;
+        left: 60px;
+    }
+
+    .garba-girl {
+        width: 60px;
+        position: relative;
+        top: -300px;
+        left: -40px;
+    }
+
+    .garba-boy {
+        width: 150px;
+        position: relative;
+        top: -300px;
+        left: 40px;
+    }
+
+    #home-heading-1 {
+        color: white !important;
+        font-size: 30px !important;
+        position: absolute;
+        left: 0px;
+        top: 232px;
+    }
+}
+
+.alert {
+    background-color: #e28d28;
+}
+
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.required::after {
+    content: "*";
+    font-weight: bold;
+    color: red;
+}

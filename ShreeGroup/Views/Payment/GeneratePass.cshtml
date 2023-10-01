@@ -1,0 +1,77 @@
+﻿@model ShreeGroup.Models.RegistrationModel
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title>Shree Goup Umreth</title>
+    <style>
+    </style>
+</head>
+<body>
+    <div class="main-page">
+        <div class="sub-page">
+            <br />
+            <div style=" margin: auto; width: 580px; height: 680px; box-shadow: 0px 0px 35px #888888; margin-top: 70px; background-image: url('../../Assets/Images/download-pass-bg.png');">
+                <div style="float:right; width: 40%; height: 100%;">
+                    <img src="@ViewBag.imagepng" alt="Profile Image" style="width: 200px; height: 200px; margin-left: 0px; border-radius: 10px; margin-top:25px;" />
+                    <div style="margin-top: 30px; margin-left:-15px;">
+                        <div>
+                            <label style="font-size: 22px; font-weight: 500; color: #324055; display: inline; padding: 0.2em 0.6em 0.3em;"
+                                   for="firstname">First Name</label> &nbsp;
+                            <span style="width:10px !important;">
+                                <input type="text" id="LastName" name="LastName" value="@Model.FirstName" readonly style="text-decoration: none; border: none; background: none; outline: none; padding: 0.2em 0.6em 0.3em; font-weight: bold; width: 170px; font-size: 24px;">
+                            </span>
+                        </div>
+                        <div>
+                            <label style="font-size: 22px; font-weight: 500; color: #324055; display: inline; padding: 0.2em 0.6em 0.3em;"
+                                   for="lastname">Last Name</label> &nbsp;
+                            <span style="width:10px !important;">
+                                <input type="text" id="LastName" name="LastName" value="@Model.LastName" readonly style="text-decoration: none; border: none; background: none; outline: none; padding: 0.2em 0.6em 0.3em; font-weight: bold; width: 170px; font-size: 24px;">
+                            </span>
+                        </div>
+                        <div>
+                            <label style="font-size: 22px; font-weight: 500; color: #324055; display: inline; padding: 0.2em 0.6em 0.3em;"
+                                   for="bloodgroup">Age</label> &nbsp;
+                            <br />
+                            <span style="width:10px !important;">
+                                <input type="text" id="Age" name="Age" value="@Model.Age" readonly style="text-decoration: none; border: none; background: none; outline: none; padding: 0.2em 0.6em 0.3em; font-weight: bold; width: 170px; font-size: 24px;">
+                            </span>
+                        </div>
+                        <div>
+                            <label style="font-size: 22px; font-weight: 500; color: #324055; display: inline; padding: 0.2em 0.6em 0.3em;"
+                                   for="phonenumber">Phone Number</label> &nbsp;
+                            <span style="width:10px !important;">
+                                <input type="text" id="PhoneNumber" name="PhoneNumber" value="@Model.PhoneNumber" readonly style="text-decoration: none; border: none; background: none; outline: none; padding: 0.2em 0.6em 0.3em; font-weight: bold; width: 170px; font-size: 24px;">
+                            </span>
+                        </div>
+                        <div>
+                            <label style="font-size: 22px; font-weight: 500; color: #324055; display: inline; padding: 0.2em 0.6em 0.3em;"
+                                   for="aadharcard">Aadhar Card</label> &nbsp;
+                            <span style="width:10px !important;">
+                                <input type="text" id="AadharCard" name="AadharCard" value="@Model.AadharCard" readonly style="text-decoration: none; border: none; background: none; outline: none; padding: 0.2em 0.6em 0.3em; font-weight: bold; width: 170px; font-size: 24px;">
+                            </span>
+                        </div>
+                    </div>
+                    <div style=" font-size: 14px !important; font-weight: bold; margin-top: 15px;"> <span style="font-size: 14px !important; margin-top: 15px;">From:</span> 26-09-2023 <span style=" font-size: 14px !important; margin-top: 15px;"><br /><br />To:</span> 4-10-2022</div>
+                </div>
+                <div style="float: left; width: 58%; height: 100%;">
+                    <div>
+                        <img style=" width: 250px; position: relative; right: -50px; height: 250px; bottom: 30px;" src="~/Assets/Images/SHREE GROUP logo.png" alt="Logo" />
+                        <br />
+                        <img style="width: 270px; height: 150px; position: relative; right: -30px; bottom:45px;" src="~/Assets/Images/utsav.png" alt="Logo" />
+                    </div>
+
+                    <div class="content">
+                        <img src="@ViewBag.QRCodeImage" width="240px" height="240px;" style="position: relative; right: -30px; bottom: 30px; " />
+                    </div>
+                    <div style="margin-left:30px;"><span style="font-weight:bold;color:black !important;">Venue:</span> SNDT Ground, Umreth</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

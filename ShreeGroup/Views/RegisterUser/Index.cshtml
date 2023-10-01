@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<section class="container">
+    <h2>Index</h2>
+
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div>Dear - @User.Identity.Name</div>
+        <div>@Html.ActionLink("Logout", "Logout", "Account")</div>
+    }
+    <br />
+    <h3> Total Count:@ViewBag.TotalAllCount</h3>
+    <br />
+    <br />
+    <a><input type="button" value="Get Customer List" class="login-button" onclick="@("window.location.href='" + @Url.Action("GetCustomerList", "RegisterUser" ) + "'");" /></a>
+    <br />
+    <br />
+    <a><input type="button" value="Get Admin Free pass List" class="login-button" onclick="@("window.location.href='" + @Url.Action("GetAdminFreeCustomerList", "RegisterUser") + "'");" /></a>
+    <br />
+    <br />
+    <a><input type="button" value="Add Customer" class="login-button" onclick="@("window.location.href='" + @Url.Action("RegisterationCustomer", "RegisterUser") + "'");" /></a>
+    <br />
+    <br />
+    <a><input type="button" value="Add Cash Customer" class="login-button" onclick="@("window.location.href='" + @Url.Action("RegisterCashCustomer", "RegisterUser") + "'");" /></a>
+    <br />
+    <br />
+    <a><input type="button" value="Get Seat Booking List" class="login-button" onclick="@("window.location.href='" + @Url.Action("GetBookingSeatList", "RegisterUser") + "'");" /></a>
+</section>
+
+
+

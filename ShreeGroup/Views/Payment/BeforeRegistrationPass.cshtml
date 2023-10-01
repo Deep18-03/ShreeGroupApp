@@ -1,0 +1,94 @@
+﻿@model ShreeGroup.Models.RegistrationModel
+
+@{
+    ViewBag.Title = "BeforeRegistration";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+
+<head>
+    <link href="~/Content/Custom/registeration.css" rel="stylesheet" />
+    <style>
+
+        span {
+            font-size: 12px !important;
+            color: red !important;
+        }
+        /* .Shree-Top-Logo{
+            width:200px
+        }*/
+    </style>
+</head>
+
+<!-- header  -->
+@*<header>
+        <nav class="navbar-fixed-top white-nav-top">
+            <div class="container-fluid">
+                <nav class="navbar navbar-expand-lg ">
+                    <img class="logo center-logo-1" src="~/Assets/Images/new logo.png" alt="Logo" />
+                    <img class="logo-2 center-logo-2" src="~/Assets/Images/utsav.png" alt="Logo" />
+                </nav>
+            </div>
+        </nav>
+    </header>*@
+<!-- header ends  -->
+<!--Image section-->
+<section id="home">
+    <div class="home-bg-img"></div>
+
+    <!-- home content -->
+    <div id="home-content">
+        <div>
+            <div id="home-heading" class="text-center">
+                <!--<div class="logo-all">-->
+                @*<img class="logo-2 center-logo-2" src="~/Assets/Images/utsav.png" alt="Logo" />*@
+                @*<h1 id="home-heading-1">Event Registration</h1>*@
+                <!--</div>-->
+                @*<img class="garba-girl" src="~/Assets/Images/garba-girl.png" alt="Logo" />
+                    <img class="garba-boy" src="~/Assets/Images/garba-boy.png" alt="Logo" />*@
+
+                <div style="display: flex; justify-content: center;">
+                    <img class="Side-logo" style="width:130px;" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                    <img class="Shree-Top-Logo" style="width:200px;" src="~/Assets/Images/footer-logo.png" alt="Logo" />
+                    <img class="Side-logo" style="width: 130px" src="~/Assets/Images/TopCenter.png" alt="Logo" />
+                </div>
+                <div>
+                    <h1 style="color:white">Event Registration</h1>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+<!--Image secation-->
+<br />
+<!--Form-->
+<section id="user_form">
+    <div class="container">
+        @using (Html.BeginForm("BeforeRegistration", "Payment", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <!--Aadhar card-->
+            <div class="form-group col-md-6" id="text">
+                @Html.LabelFor(model => model.AadharCard, new { @class = "required" })
+                @Html.EditorFor(model => model.AadharCard, new { htmlAttributes = new { @class = "form-control", placeholder = "Example: 830210220283", type = "number", maxlength = "12" } })
+                @Html.Label("Special character and Spaces are not allowed", new { @class = "text-info" })
+                <br />
+                @Html.ValidationMessageFor(model => model.AadharCard, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group col-md-6" id="text">
+                @Html.HiddenFor(model => model.District)
+            </div>
+            <div class="form-row">
+                <!--submit button-->
+                <div class="form-group col-md-6" id="text">
+                    <input type="submit" value="Submit" class="primary-button-reg" id="btnSave" />
+                    <input type="button" value="Cancel" class="secondary-button-reg" style="margin-left:20px;" onclick="@("window.location.href='" + @Url.Action("Index", "Home") + "'");" />
+                </div>
+            </div>
+        }
+    </div>
+</section>
+
+
+<script></script>

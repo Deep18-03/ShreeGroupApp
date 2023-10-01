@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Shree Group";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+
+<head>
+    <link href="~/Content/Custom/success.css" rel="stylesheet" />
+</head>
+<div class="card">
+    <div class="warning-msg">
+        <i class="fa fa-warning"></i>
+        Do not close or refresh your page
+    </div>
+    <br />
+    <div class="warning-msg">
+        <i class="fa fa-warning"></i>
+        Take ScreenShot of this.
+    </div>
+    <br />
+    <div style="border-radius:200px; height:200px; width:200px; background: #F8FAF5; margin:0 auto;">
+        <i class="checkmark">✓</i>
+    </div>
+    <h1>Success</h1>
+    <h1 style="color: black">Reference No. : @ViewBag.AdminId</h1>
+    <p>Your payment has been done.Collect your pass from Shree Group Office.<br /></p>
+    <br />
+    <input type="button" value="Back to Admin" class="Register-success" onclick="@("window.location.href='" + @Url.Action("Index", "RegisterUser") + "'");" />
+</div>

@@ -1,0 +1,407 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_PageLayout.cshtml";
+}
+<style>
+    body {
+        background: #4F275E;
+    }
+
+    .text, p, span {
+        font-size: 16px !important;
+        color: #f2f2f2 !important;
+    }
+</style>
+
+
+@*<div id="preloader">
+
+    </div>*@
+
+@*<div class="icon-bar" style="color:white">
+        Register Now
+    </div>*@
+
+@*<a href="@Url.Action("BeforeRegistrationPass", "Payment")" class="btn btn-danger enquiry-sec position-fixed p-2 fixed_btn">
+        <h5><span>R</span><br><span>E</span><br><span>G</span><br><span>I</span><br><span>S</span><br><span>T</span><br><span>E</span><br><span>R</span><br><br><span>N</span><br><span>O</span><br><span>W</span><br></h5>
+    </a>*@
+
+<a href="#Register-Pass" class="btn btn-danger enquiry-sec position-fixed p-2 fixed_btn">
+    <h5><span>R</span><br><span>E</span><br><span>G</span><br><span>I</span><br><span>S</span><br><span>T</span><br><span>E</span><br><span>R</span><br><br><span>N</span><br><span>O</span><br><span>W</span><br></h5>
+</a>
+
+<section class="bgcolor1" id="Home">
+    <!-- navigation bar-->
+    <nav class="navbar navbar-expand-lg ">
+        <img class="logo" src="~/Assets/Images/footer-logo.png" alt="Logo" />
+        <img class="logo-2" src="~/Assets/Images/abcd.png" alt="Logo" />
+        <button class="navbar-toggler" id="menu-button" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span><i class="fa fa-2x fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+            <ul class="nav navbar-nav ms-auto mb-2 mb-lg-0 text">
+                <li><a href="#Home" style="color: #f2f2f2">Home</a></li>
+                <li><a href="#Venue" style="color: #f2f2f2">Venue</a></li>
+                <li><a href="#Event" style="color: #f2f2f2">Event</a></li>
+                <li><a href="#Main-Sponsers" style="color: #f2f2f2">Sponsors</a></li>
+                <li><a href="#Video" style="color: #f2f2f2">Video</a></li>
+                <li><a href="#Gallery" style="color: #f2f2f2">Gallery</a></li>
+                <li><a href="#Team" style="color: #f2f2f2">Team</a></li>
+                <li><a href="#Footer" style="color: #f2f2f2">Contact</a></li>
+                @*<li><a><input type="button" value="Get Pass" class="login-button" onclick="@("window.location.href='" + @Url.Action("GetAllPassRecords", "Customer") + "'");" /></a></li>*@
+                @*<li><a><input type="button" value="Login" class="login-button" onclick="@("window.location.href='" + @Url.Action("Registration", "Payment") + "'");" /></a></li>*@
+            </ul>
+        </div>
+
+    </nav>
+
+    <!-- /navigation bar -->
+    <!-- Home page-->
+    <div class="container">
+        <div class="col-md-7" id="header">
+            <img src="~/Assets/Images/Fire_Crackers.png" class="fire-crack-image-left" />
+            <img id="garbaimage" src="~/Assets/Images/Garba_2023.png" alt="garbaimage" />
+        </div>
+        <div class="col-md-5 col-sm-12">
+            <img src="~/Assets/Images/Fire_Crackers.png" class="fire-crack-image" />
+            <div id="left-home">
+                <img class="home-ticket" src="~/Assets/Images/HomeTicket.png" alt="Logo" />
+                <img class="mobile-home-ticket" src="~/Assets/Images/mobile-ticket.png" alt="Logo" />
+                <!--Registration button-->
+                @*<input type="button" class="Register margin-top-inner" value="Register Now" onclick="@("window.location.href='" + @Url.Action("BeforeRegistrationPass", "Payment") + "'");" />*@
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="hwrap ticker-info">
+        <div class="hmove">
+            @*<div class="hitem">Collect your physical passes from garba venue after 20th September.</div>*@
+            <div class="hitem">Only offline passes will be valid and needs to be collected from Shree Group Office.</div>
+            <div class="hitem"><i class="fa fa-phone pe-2" style="color: white !important"></i> Helpline Number:  +91 9723555960, +91 9924917874, +91 9638886727</div>
+        </div>
+    </div>
+
+    <div class="ticker-mobile-info">
+        <div style="text-align:center;">
+            Only offline passes will be valid and needs to be collected from Shree Group Office.
+            <br /><i class="fa fa-phone pe-2" style="color: white !important"></i> +91 9723555960,+91 9924917874, +91 9638886727
+        </div>
+    </div>
+</section>
+<section id="Register-Pass" style="margin-top:30px;display:flex;justify-content:center">
+    <div class="container" style="margin-top:30px">
+        <div class="row">
+            <div class="col-md-4" style="text-align: center;">
+                <img src="~/Assets/Images/Pass-1.png" style="width:280px" />
+                <button class="btn btn-primary registers-pass" onclick="RegisterPass('SILVER')">Register Now</button>
+            </div>
+            <div class="col-md-4" style="text-align: center;">
+                <img src="~/Assets/Images/Pass-2.png" style="width:280px" />
+                <button class="btn btn-primary registers-pass" onclick="RegisterPass('GOLD')">Register Now</button>
+            </div>
+            <div class="col-md-4" style="text-align: center;">
+                <img src="~/Assets/Images/Pass-3.png" style="width:280px" />
+                <button class="btn btn-primary registers-pass" onclick="RegisterSeatingPass()">Book Now</button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</section>
+<!--Venue-->
+<section id="Venue" class="bg-ground-image">
+    <div class="container margin-top-outer">
+        <div class="head1" style="text-align: center; color: #E28D28 !important;">Garba Venue </div>
+        <br />
+        <br />
+        <div class="container margin-top-outer">
+            <div class="col-md-12" id="header">
+                <div style="justify-content:center;text-align:center">
+                    <a href="https://goo.gl/maps/xgMiKnHbyj5ZT5Yt5" target="_blank"> <i class="fa fa-map-marker" style="font-size: 80px; color: #E28D28; padding: 10px; border: 1px solid #E28D28; "></i></a>  <br /><br /><span class="big-head">SNDT Ground, Umreth</span>
+                    <p class="margin-top-inner big-head-2" style="color:white!important">
+                        Register now and become a part of the energetic and the enthusiastic Garba Nights at SNDT Ground, Umreth.
+                    </p>
+                    <p class="margin-top-inner big-head-2" style="color:white!important">
+                        From <strong>15-10-2023</strong> To <strong>23-10-2023</strong>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!--Event Highlight-->
+<section id="Event" class="bgcolor1" style="position:relative;">
+    <div class="extra-color"></div>
+    <div class="container margin-top-outer">
+        <div class="head1" style="text-align:center;">Event Highlights</div>
+        <br />
+        <div class="row margin-top-inner">
+            <div class="col-md-6">
+                <div class="profile-card-2-singer">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/Male-Singer-2.jpg');">
+                        <div class="overlay">
+                        </div>
+                    </div>
+                    <div class="profile-name-singer">Sadashiv Dave</div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="profile-card-2-singer">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/Female-Singer-2.jpg');">
+                        <div class="overlay">
+                        </div>
+                    </div>
+                    <div class="profile-name-singer">Smruti Dave</div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="head3" style="text-align:center;font-size:45px!important; font-family:Calibri !important; color:white !important">Team ShivNaad</div>
+        <hr style="border-top: 1px solid #E28D28;">
+
+    </div>
+</section>
+<!-- video page page-->
+<section id="Video" class="bgcolor1">
+    <div class="container margin-top-outer">
+        <div class="col-md-12">
+            <div>
+                <div class="head1" style="text-align:center;">Garba Highlights</div>
+                @*<div class="o-video margin-top-inner ">
+                        <iframe style="border-radius:20px;" allowtransparency="false" src="https://www.youtube.com/embed/OahLZDDOE7s?wmode=opaque" frameborder="2" ></iframe>
+                    </div>*@
+                <br />
+                <div class="responsive-video margin-top-inner">
+                    <iframe style="border-radius:20px;" class="video" src="https://www.youtube.com/embed/OahLZDDOE7s?wmode=opaque" frameborder="0" allowfullscreen></iframe>
+                </div>
+                <div class="head3" style="text-align:center; color:white !important"> "It is with your feet that you move... but it is with your heart that you do garba."</div>
+                <div class="margin-top-outer"> </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!--Main Sponsers-->
+<section id="Main-Sponsers" class="bgcolor1" style="position:relative;">
+    <div class="extra-color"></div>
+    <div class="container margin-top-outer" >
+        <div class="head1" style="text-align:center;">Our Main Sponsors</div>
+        <br />
+
+        <div class="row">
+            <div class="col-md-12" style="text-align:center">
+                <div class="sponsor-card-2" style="width:100% !important">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/Main_Sponsers.jpeg');width:100% !important">
+                        @*<div class="overlay">
+                        </div>*@
+                    </div>
+                    @*<div class="profile-name-singer">Sadashiv Dave</div>*@
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div class="container">
+            <div class="row" style="text-align:center">
+                <div class="col-md-4" style="font-size:30px!important; font-family:Calibri !important; color:white !important">Sunil Bhagwatlal Dalal</div>
+                <div class="col-md-4" style="font-size:30px!important; font-family:Calibri !important; color:white !important">Neena Sunil Dalal</div>
+                <div class="col-md-4" style="font-size:30px!important; font-family:Calibri !important; color:white !important">Yash Sunil Dalal</div>
+            </div>
+        </div>
+       @* <div class="head3" style="text-align:center;font-size:45px!important; font-family:Calibri !important; color:white !important"></div>*@
+        <hr style="border-top: 1px solid #E28D28;">
+        <br />
+        <br />
+
+    </div>
+</section>
+
+<section id="Mobile-Main-Sponsers" class=" bgcolor1" >
+    <br />
+    <br />
+    <div class="container">
+        <div class="head1" style="text-align:center;">Our Main Sponsors</div>
+        <div class="row margin-top-inner">
+            <div class="col-md-12">
+                <hr style="border-top: 1px solid #E28D28;">
+                <div class="profile-card-2">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/Main_Sponsers_Center.jpg');">
+                        @*<div class="overlay">
+                            </div>*@
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row" style="text-align:center">
+                        <div class="col-md-4" style="font-size:30px!important; font-family:Calibri !important; color:white !important">Sunil Bhagwatlal Dalal</div>
+                        <div class="col-md-4" style="font-size:30px!important; font-family:Calibri !important; color:white !important">Neena Sunil Dalal</div>
+                        <div class="col-md-4" style="font-size:30px!important; font-family:Calibri !important; color:white !important">Yash Sunil Dalal</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br />
+    <br />
+</section>
+
+
+<!--hall of flame-->
+<section id="Gallery" class="bgcolor1">
+    <div class="container">
+        <div class="col-md-12">
+            <div>
+                <div class="head1" style="text-align:center;">Our Gallery</div>
+                <br />
+            </div>
+        </div>
+    </div>
+    <div class="laptop-gallery">
+        <img src="~/Assets/Images/gallery-laptop.png" style="text-align:center;" />
+    </div>
+    <div class="mobile-gallery">
+        <img src="~/Assets/Images/gallery-mobile.png" />
+    </div>
+</section>
+<!-- team page-->
+<section id="Team" class=" bgcolor1">
+    <br />
+    <br />
+    <div class="container">
+        <div class="head1" style="text-align:center;">Our Team</div>
+        <div class="row margin-top-inner">
+            <div class="col-md-4">
+                <hr style="border-top: 1px solid #E28D28;">
+                <div class="profile-card-2">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/001.jpg');">
+                        <div class="overlay">
+                        </div>
+                    </div>
+
+                    <div class="profile-name">Vaibhav Patel</div>
+                    <div class="profile-username"><i class="fa fa-phone pe-2" style="color: white"></i> +91 9773047874</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <hr style="border-top: 1px solid #E28D28;">
+                <div class="profile-card-2">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/003.jpg');">
+                        <div class="overlay">
+                        </div>
+                    </div>
+
+                    <div class="profile-name">Harsh Shaherawala</div>
+                    <div class="profile-username"><i class="fa fa-phone pe-2" style="color: white"></i> +91 9824035585</div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <hr style="border-top: 1px solid #E28D28;">
+                <div class="profile-card-2">
+                    <div class="img-back" style=" background-image: url('../Assets/Images/002.jpg');">
+                        <div class="overlay">
+                        </div>
+                    </div>
+
+                    <div class="profile-name">Nilesh Dalwadi</div>
+                    <div class="profile-username"><i class="fa fa-phone pe-2" style="color: white"></i> +91 8490809770</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<br />
+<br />
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<footer class="bg-primary text-center text-lg-start text-white footer-color" id="Footer">
+    <!-- Grid container -->
+    <div class="container p-4">
+        <!--Grid row-->
+        <div class="row my-4">
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <img class="text-uppercase footer-logo" src="~/Assets/Images/footer-logo.png" alt="Logo" loading="lazy" />
+            </div>
+            <!--Grid column-->
+            <!--Grid Contact Info column-->
+            <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 font-weight-bolder" style="color: #E28D28">Contact Info</h5>
+
+                <ul class="list-unstyled">
+                    <li>
+                        <p><i class="fa fa-map-marker" style="color: #E28D28"></i> SNDT Ground , Umreth , Dist. Anand , Gujarat 388220</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-phone pe-2" style="color: #E28D28"></i> +91 8490809770</p>
+                    </li>
+                    <li>
+                        <p><i class="fa fa-envelope pe-2 mb-0" style="color: #E28D28"></i> help.shreegroupumreth@gmail.com</p>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 font-weight-bolder" style="color: #E28D28">Quick Links</h5>
+
+                <ul class="list-unstyled">
+                    <li class="mb-2">
+                        <a href="@Url.Action("PrivacyPolicy", "Home")" class="text-white">Privacy Policy</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="@Url.Action("TermsAndConditions", "Home")" class="text-white">Terms & Conditions</a>
+                    </li>
+                    <li class="mb-2">
+                        <a href="@Url.Action("RefundAndReturn", "Home")" class="text-white">Refund & Return</a>
+                    </li>
+                </ul>
+            </div>
+            <!--Grid column-->
+            <!--Grid column-->
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                <h5 class="text-uppercase mb-4 font-weight-bolder" style="color: #E28D28">Follow Us</h5>
+
+                <ul class="list-unstyled d-flex flex-row justify-content-center">
+                    <li>
+                        <a style="border:2px solid white" class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/people/Shree-Parivaar/100019660440526/" target="_blank" role="button">
+                            <i class="fa fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a style="border:2px solid white" class="btn btn-outline-light btn-floating m-1" href="https://www.google.com/" role="button">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a style="border:2px solid white" class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/shree_group2023/" target="_blank" role="button">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </li>
+                </ul>
+                <div>Developed by : <br />Prince IT Solutions <br />(+91 9033769091)</div>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2023 Copyright:
+        <a class="text-white" href="http://shreegroupumreth.com/">ShreeGroupUmreth.com</a>
+    </div>
+    <!-- Copyright -->
+</footer>
+<script>
+    function RegisterPass(garbaPassType) {
+       document.location = '@Url.Action("BeforeRegistrationPass", "Payment")?garbaPassType=' + garbaPassType;
+    }
+
+    function RegisterSeatingPass() {
+       document.location = '@Url.Action("SaveGeneralPass", "GeneralSeatPass")';
+    }
+</script>
